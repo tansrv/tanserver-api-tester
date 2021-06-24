@@ -37,7 +37,7 @@ int _connect(const char* host, in_port_t port){
 
 static bool check_crlf(std::string s){
     size_t dimension = s.size();
-    if(dimension < 4)
+    if(dimension < 2)
         return false;
     
     std::string sb = s.substr(dimension - 2, 2);
