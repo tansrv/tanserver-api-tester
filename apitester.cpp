@@ -3,30 +3,39 @@
 #include "ssl_tester.h"
 #include "connection.h"
 
-int socketDescriptor;
-
 using namespace std;
 
-int main(int argc, char **argv){
+int main(int argc, char **argv)
+{
     // argv[1]: IP address, argv[2]: port, argv[3]: api, argv[4]: json parameters
     if(argc != 5) handleError("Usage: ./apitester server_ip_address port api_name json_string\n");
     
+    int         wr,
+                socketDescriptor;
+
+    SSL         *ssl;
+
+    string      packet,
+                rcvd;
+
+    cleanable   *cl;
+
+    char        header[2048];
+
     //cleanup routine on exit 
-    cleanable* cl = (cleanable*) malloc(sizeof(cleanable));
+    cl = (cleanable*) malloc(sizeof(cleanable));
     memset(cl, 0, sizeof(cleanable));
     on_exit(exitCleanup, (void*) cl);
 
-    int wr;
-    SSL* ssl;
-    string packet, rcvd;
-
+    //create socket
     socketDescriptor = _connect(argv[1], atoi(argv[2]));
     cl->fd = socketDescriptor;
+
+    //add ssl to connection
     ssl = ssl_connect(socketDescriptor);
     cl->ssl = ssl;
 
     //building package: header {"user_api":"...","json_length":...}\r\n
-    char header[2048];
     snprintf(header, 2048, "{\"user_api\":\"%s\",\"json_length\":%d}\r\n",argv[3], strlen(argv[4]));
     packet = header;
     

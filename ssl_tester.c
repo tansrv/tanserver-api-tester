@@ -1,16 +1,18 @@
 #include "ssl_tester.h"
 
-static SSL_CTX* SSL_init(){
+static SSL_CTX* SSL_init()
+{
     SSL_library_init();
     OpenSSL_add_all_algorithms();
     SSL_load_error_strings();
     return SSL_CTX_new(SSLv23_method());
 }
 
-SSL* ssl_connect(int fileDescriptor){
+SSL* ssl_connect(int fileDescriptor)
+{
 
     SSL_CTX* context;
-    SSL* ssl;
+    SSL*     ssl;
 
     context = SSL_init();
 
