@@ -1,3 +1,5 @@
+# tanserver-api-tester
+
 Use this tool to test your APIs 
 
 ## Usage:
