@@ -1,6 +1,12 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
+/*
+ * Copyright (C) tanserver.org
+ * Copyright (C) Daniele Affinita
+ * Copyright (C) Chen Daye
+ */
+
 #include <unistd.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>

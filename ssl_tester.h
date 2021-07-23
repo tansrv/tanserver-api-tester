@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) tanserver.org
+ * Copyright (C) Daniele Affinita
+ * Copyright (C) Chen Daye
+ */
+
 #ifndef SSL_TESTER_H
 #define SSL_TESTER_H
 

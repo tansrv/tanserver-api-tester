@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) tanserver.org
+ * Copyright (C) Daniele Affinita
+ * Copyright (C) Chen Daye
+ */
+
 #include "ssl_tester.h"
 
 static SSL_CTX* SSL_init()

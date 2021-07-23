@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) tanserver.org
+ * Copyright (C) Daniele Affinita
+ * Copyright (C) Chen Daye
+ */
+
 #include <string>
 #include "error.h"
 #include "ssl_tester.h"

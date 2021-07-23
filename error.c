@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) tanserver.org
+ * Copyright (C) Daniele Affinita
+ * Copyright (C) Chen Daye
+ */
+
 #include "error.h"
 
 void handleError(const char* msg)

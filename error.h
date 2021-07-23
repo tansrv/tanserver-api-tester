@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) tanserver.org
+ * Copyright (C) Daniele Affinita
+ * Copyright (C) Chen Daye
+ */
+
 #ifndef ERROR_H
 #define ERROR_H
 
